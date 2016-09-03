@@ -1,0 +1,73 @@
+{
+  "name": "compatibility-reporter",
+  "main": "./lib/compatibility-reporter",
+  "version": "0.0.0",
+  "description": "Generate a report on the Web Platform features that your website uses, and the browser support of each feature.",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": "compatibility-reporter:generate"
+  },
+  "repository": "https://github.com/keeganstreet/atom-compatibility-reporter",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "browserslist": "^1.3.6",
+    "compatibility-reporter": "^0.1.0",
+    "minimatch": "^3.0.3",
+    "mustache": "^2.2.1"
+  },
+  "configSchema": {
+    "browsers": {
+      "type": "string",
+      "default": "last 1 version, last 2 IE versions, last 1 Samsung version, last 1 Android version",
+      "title": "Browsers",
+      "description": "List of browsers to include in the report, written in [Browserslist](https://github.com/ai/browserslist) format."
+    },
+    "excludeVcsIgnoredFiles": {
+      "type": "boolean",
+      "default": true,
+      "title": "Exclude VCS Ignored Files",
+      "description": "Exclude files and directories ignored by the current project's VCS (version control system). For example, projects using Git have these paths defined in their `.gitignore` file."
+    },
+    "excludeIgnoredNames": {
+      "type": "boolean",
+      "default": true,
+      "description": "Exclude items matched by the `Ignored Names` core config setting."
+    },
+    "customIgnoredNames": {
+      "type": "array",
+      "default": [],
+      "title": "Custom Ignored Names",
+      "description": "List of string glob patterns. Files and directories matching these patterns will be ignored by Compatibility Reporter."
+    },
+    "fileFiltersCSS": {
+      "type": "array",
+      "default": [
+        "*.css"
+      ],
+      "title": "File Filters (CSS)",
+      "description": "List of string glob patterns for files that should be parsed as CSS."
+    },
+    "fileFiltersJavaScript": {
+      "type": "array",
+      "default": [
+        "*.js"
+      ],
+      "title": "File Filters (JavaScript)",
+      "description": "List of string glob patterns for files that should be parsed as JavaScript."
+    },
+    "fileFiltersHTML": {
+      "type": "array",
+      "default": [
+        "*.html",
+        "*.htm",
+        "*.shtml",
+        "*.erb"
+      ],
+      "title": "File Filters (HTML)",
+      "description": "List of string glob patterns for files that should be parsed as HTML."
+    }
+  }
+}

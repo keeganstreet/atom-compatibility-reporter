@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    ".tree-view > li.directory": [
+      {
+        "label": "Generate Compatibility Report",
+        "command": "compatibility-reporter:generate"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Compatibility Reporter",
+          "submenu": [
+            {
+              "label": "Generate Report",
+              "command": "compatibility-reporter:generate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
