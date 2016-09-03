@@ -1,0 +1,50 @@
+<h2>Browser support</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Feature</th>
+			{{#each browsers}}
+			<th>{{browserName}} {{browserVersion}}</th>
+			{{/each}}
+		</tr>
+	</thead>
+	<tbody>
+		{{#each results}}
+		<tr>
+			<th><a href="#feature-{{id}}">{{value.title}}</a></th>
+			{{#each ../browsers}}
+			<td class="{{browserFeatureSupportClassname this ../value}}">{{browserFeatureSupport this ../value}}</td>
+			{{/each}}
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<h2>References to features in code</h2>
+<table>
+	<thead>
+		<tr>
+			<th id="reference-file">Filename</th>
+			<th id="reference-line">Line</th>
+			<th id="reference-column">Column</th>
+			<th id="reference-type">Type of match</th>
+			<th id="reference-match">Match</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each results}}
+		<tr>
+			<th colspan="5" id="feature-{{id}}"><h3>{{value.title}}</h3></th>
+		</tr>
+		{{#each value.occurances}}
+		<tr>
+			<td headers="feature-{{@key}} reference-file">{{relativePath}}</td>
+			<td headers="feature-{{@key}} reference-line">{{line}}</td>
+			<td headers="feature-{{@key}} reference-column">{{column}}</td>
+			<td headers="feature-{{@key}} reference-type">{{type}}</td>
+			<td headers="feature-{{@key}} reference-match">{{match}}</td>
+		</tr>
+		{{/each}}
+		{{/each}}
+	<tbody>
+</table>
