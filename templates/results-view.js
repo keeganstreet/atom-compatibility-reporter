@@ -61,7 +61,7 @@ templates['results-view.html'] = template({"1":function(container,depth0,helpers
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, alias1=depth0 != null ? depth0 : {};
 
-  return "<h2>Browser support</h2>\n<table>\n	<thead>\n		<tr>\n			<th>Feature</th>\n"
+  return "<h2>Browser support</h2>\n<table class=\"features-table\">\n	<thead>\n		<tr>\n			<th>Feature</th>\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.browsers : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "		</tr>\n	</thead>\n	<tbody>\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
