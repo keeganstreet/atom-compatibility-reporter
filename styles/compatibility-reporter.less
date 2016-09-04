@@ -5,6 +5,16 @@
 @import "ui-variables";
 
 .compatibility-reporter {
+  display: flex;
+  flex-direction: column;
+
+  .hidden {
+    display: none;
+  }
+}
+
+.results-view {
   overflow: auto;
   padding: 0 @component-padding;
+  flex: 1;
 }
