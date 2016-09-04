@@ -37,27 +37,25 @@ templates['results-view.html'] = template({"1":function(container,depth0,helpers
 },"7":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "		<tr>\n			<td headers=\"feature-"
-    + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + " reference-file\">"
-    + alias4(((helper = (helper = helpers.relativePath || (depth0 != null ? depth0.relativePath : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"relativePath","hash":{},"data":data}) : helper)))
-    + "</td>\n			<td headers=\"feature-"
-    + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + " reference-line\">"
+  return "		<tr data-file=\""
+    + alias4(((helper = (helper = helpers.file || (depth0 != null ? depth0.file : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"file","hash":{},"data":data}) : helper)))
+    + "\" data-line=\""
     + alias4(((helper = (helper = helpers.line || (depth0 != null ? depth0.line : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"line","hash":{},"data":data}) : helper)))
-    + "</td>\n			<td headers=\"feature-"
-    + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + " reference-column\">"
+    + "\" data-column=\""
     + alias4(((helper = (helper = helpers.column || (depth0 != null ? depth0.column : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"column","hash":{},"data":data}) : helper)))
-    + "</td>\n			<td headers=\"feature-"
+    + "\" class=\"occurance\">\n			<td headers=\"feature-"
+    + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
+    + " reference-file\"><span class=\"icon icon-file-text\">"
+    + alias4(((helper = (helper = helpers.relativePath || (depth0 != null ? depth0.relativePath : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"relativePath","hash":{},"data":data}) : helper)))
+    + "</a></td>\n			<td headers=\"feature-"
     + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
     + " reference-type\">"
     + alias4(((helper = (helper = helpers.type || (depth0 != null ? depth0.type : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"type","hash":{},"data":data}) : helper)))
     + "</td>\n			<td headers=\"feature-"
     + alias4(((helper = (helper = helpers.key || (data && data.key)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"key","hash":{},"data":data}) : helper)))
-    + " reference-match\">"
+    + " reference-match\"><code>"
     + alias4(((helper = (helper = helpers.match || (depth0 != null ? depth0.match : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"match","hash":{},"data":data}) : helper)))
-    + "</td>\n		</tr>\n";
+    + "</code></td>\n		</tr>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, alias1=depth0 != null ? depth0 : {};
 
@@ -65,7 +63,7 @@ templates['results-view.html'] = template({"1":function(container,depth0,helpers
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.browsers : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "		</tr>\n	</thead>\n	<tbody>\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "	</tbody>\n</table>\n\n<h2>References to features in code</h2>\n<table>\n	<thead>\n		<tr>\n			<th id=\"reference-file\">Filename</th>\n			<th id=\"reference-line\">Line</th>\n			<th id=\"reference-column\">Column</th>\n			<th id=\"reference-type\">Type of match</th>\n			<th id=\"reference-match\">Match</th>\n		</tr>\n	</thead>\n	<tbody>\n"
+    + "	</tbody>\n</table>\n\n<h2>References to features in code</h2>\n<table class=\"references-table\">\n	<thead>\n		<tr>\n			<th id=\"reference-file\">Filename</th>\n			<th id=\"reference-type\">Type of match</th>\n			<th id=\"reference-match\">Match</th>\n		</tr>\n	</thead>\n	<tbody>\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(6, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	<tbody>\n</table>\n";
 },"useData":true,"useDepths":true});
