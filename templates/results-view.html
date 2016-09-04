@@ -4,7 +4,9 @@
 		<tr>
 			<th>Feature</th>
 			{{#each browsers}}
-			<th>{{browserName}} {{browserVersion}}</th>
+			<th>
+				<span>{{browserName}} {{browserVersion}}</span>
+			</th>
 			{{/each}}
 		</tr>
 	</thead>
@@ -13,7 +15,12 @@
 		<tr>
 			<th><a href="#feature-{{id}}">{{value.title}}</a></th>
 			{{#each ../browsers}}
-			<td class="{{browserFeatureSupportClassname this ../value}}">{{browserFeatureSupport this ../value}}</td>
+			<td class="stat-cell {{browserFeatureSupportClassname this ../value}}">
+				{{{browserFeatureSupportIcon this ../value}}}
+				<div class="stat-cell-details">
+					{{browserFeatureSupport this ../value}}
+				</div>
+			</td>
 			{{/each}}
 		</tr>
 		{{/each}}

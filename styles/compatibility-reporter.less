@@ -22,43 +22,126 @@
 .features-table {
   border-spacing: 4px;
   border-collapse: separate;
+  margin-top: 75px;
+  margin-bottom: 30px;
+
+  thead th {
+    position: relative;
+
+    span {
+      display: block;
+      width: 200px;
+      position: absolute;
+      transform: rotateZ(-45deg);
+      transform-origin: 0 0;
+    }
+  }
 
   th {
     vertical-align: top;
-  }
-
-  th,
-  td {
     padding: 5px;
+
+    &:first-child {
+      padding-left: 0;
+    }
   }
 
-  th:first-child {
-    padding-left: 0;
+  td {
+    position: relative;
+    height: 25px;
+    padding: 0 0 0 5px;
+    text-align: center;
+
+    &:hover .stat-cell-details {
+     display: block;
+    }
   }
 
-  .support-status-y {
+  .stat-cell-details {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    z-index: 1;
+    padding: 5px;
+    width: 120px;
+    min-height: 100%;
+  }
+}
+
+.support-status-y {
+  &,
+  tr:hover &:hover,
+  .stat-cell-details {
     background-color: #39b54a;
     color: #fff;
   }
 
-  .support-status-n,
-  .support-status-p {
+  tr:hover &,
+  &.hover-column {
+    background-color: #139424;
+  }
+}
+
+.support-status-n,
+.support-status-p {
+  &,
+  tr:hover &:hover,
+  .stat-cell-details {
     background-color: #c44230;
     color: #fff;
   }
 
-  .support-status-a {
+  tr:hover &,
+  &.hover-column {
+    background-color: #ab2a18;
+  }
+}
+
+.support-status-a {
+  &,
+  tr:hover &:hover,
+  .stat-cell-details {
     background-color: #a8bd04;
     color: #fff;
   }
 
-  .support-status-u {
-    background-color: #838383;
-    color: #fff;
+  tr:hover &,
+  &.hover-column {
+    background-color: #899a00;
   }
 }
 
+.support-status-u {
+  &,
+  tr:hover &:hover,
+  .stat-cell-details {
+    background-color: #838383;
+    color: #fff;
+  }
+
+  tr:hover &,
+  &.hover-column {
+    background-color: #8d8d8d;
+  }
+}
+
+.support-status-x:before {
+  content: "-";
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: #ff6;
+  color: #000;
+  height: 8px;
+  line-height: 8px;
+  font-family: monospace;
+}
+
 .references-table {
+  margin-bottom: 30px;
+
   th {
     vertical-align: top;
   }
@@ -66,9 +149,16 @@
   th,
   td {
     padding: 5px;
+    border: 1px solid @base-border-color;
   }
+}
 
-  th:first-child {
-    padding-left: 0;
-  }
+.icon-asterisk {
+  display: inline-block;
+  font-size: 25px;
+  line-height: 1;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  vertical-align: middle;
 }

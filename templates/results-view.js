@@ -2,11 +2,11 @@ var Handlebars = require("handlebars");  var template = Handlebars.template, tem
 templates['results-view.html'] = template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "			<th>"
+  return "			<th>\n				<div><span>"
     + alias4(((helper = (helper = helpers.browserName || (depth0 != null ? depth0.browserName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"browserName","hash":{},"data":data}) : helper)))
     + " "
     + alias4(((helper = (helper = helpers.browserVersion || (depth0 != null ? depth0.browserVersion : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"browserVersion","hash":{},"data":data}) : helper)))
-    + "</th>\n";
+    + "</span></div>\n			</th>\n";
 },"3":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.escapeExpression;
 
@@ -18,13 +18,15 @@ templates['results-view.html'] = template({"1":function(container,depth0,helpers
     + ((stack1 = helpers.each.call(alias1,(depths[1] != null ? depths[1].browsers : depths[1]),{"name":"each","hash":{},"fn":container.program(4, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "		</tr>\n";
 },"4":function(container,depth0,helpers,partials,data,blockParams,depths) {
-    var alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3=container.escapeExpression;
+    var stack1, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3=container.escapeExpression;
 
-  return "			<td class=\""
+  return "			<td class=\"stat-cell "
     + alias3((helpers.browserFeatureSupportClassname || (depth0 && depth0.browserFeatureSupportClassname) || alias2).call(alias1,depth0,(depths[1] != null ? depths[1].value : depths[1]),{"name":"browserFeatureSupportClassname","hash":{},"data":data}))
-    + "\">"
+    + "\">\n				<div>\n					"
+    + ((stack1 = (helpers.browserFeatureSupportIcon || (depth0 && depth0.browserFeatureSupportIcon) || alias2).call(alias1,depth0,(depths[1] != null ? depths[1].value : depths[1]),{"name":"browserFeatureSupportIcon","hash":{},"data":data})) != null ? stack1 : "")
+    + "\n					<div class=\"stat-cell-details\">\n						"
     + alias3((helpers.browserFeatureSupport || (depth0 && depth0.browserFeatureSupport) || alias2).call(alias1,depth0,(depths[1] != null ? depths[1].value : depths[1]),{"name":"browserFeatureSupport","hash":{},"data":data}))
-    + "</td>\n";
+    + "\n					</div>\n				</div>\n			</td>\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.escapeExpression;
 
