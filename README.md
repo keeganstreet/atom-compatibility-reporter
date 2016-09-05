@@ -4,7 +4,9 @@
 
 Compatibility Reporter crawls through your CSS, JavaScript and HTML and builds up an Abstract Syntax Tree (AST) for each file. It then searches through the relevant parts of each file (such as declaration property names and values in CSS, identifier names in JavaScript, and element and attribute names in HTML), to identify which features are in use. It then extracts support data for each of these features from the Can I Use database for each browser you requested.
 
-To start, go to Packages > Compatibility Reporter > Generate Report.
+To start, right-click a directory in Tree View and select Generate Compatibility Report.
+
+![Compatibility Reporter report](https://raw.githubusercontent.com/keeganstreet/atom-compatibility-reporter/master/styles/screenshot.png)
 
 ## Settings
 
@@ -35,3 +37,7 @@ List of string glob patterns for files that should be parsed as JavaScript.
 ### File Filters (HTML)
 
 List of string glob patterns for files that should be parsed as HTML.
+
+## More information
+
+For more information, refer to the [Compatibility Reporter npm package](https://github.com/keeganstreet/compatibility-reporter).
