@@ -2,11 +2,11 @@ var Handlebars = require("handlebars");  var template = Handlebars.template, tem
 templates['results-view.html'] = template({"1":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "			<th>\n				<div><span>"
+  return "			<th>\n				<span>"
     + alias4(((helper = (helper = helpers.browserName || (depth0 != null ? depth0.browserName : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"browserName","hash":{},"data":data}) : helper)))
     + " "
     + alias4(((helper = (helper = helpers.browserVersion || (depth0 != null ? depth0.browserVersion : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"browserVersion","hash":{},"data":data}) : helper)))
-    + "</span></div>\n			</th>\n";
+    + "</span>\n			</th>\n";
 },"3":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.escapeExpression;
 
@@ -22,11 +22,11 @@ templates['results-view.html'] = template({"1":function(container,depth0,helpers
 
   return "			<td class=\"stat-cell "
     + alias3((helpers.browserFeatureSupportClassname || (depth0 && depth0.browserFeatureSupportClassname) || alias2).call(alias1,depth0,(depths[1] != null ? depths[1].value : depths[1]),{"name":"browserFeatureSupportClassname","hash":{},"data":data}))
-    + "\">\n				<div>\n					"
+    + "\">\n				"
     + ((stack1 = (helpers.browserFeatureSupportIcon || (depth0 && depth0.browserFeatureSupportIcon) || alias2).call(alias1,depth0,(depths[1] != null ? depths[1].value : depths[1]),{"name":"browserFeatureSupportIcon","hash":{},"data":data})) != null ? stack1 : "")
-    + "\n					<div class=\"stat-cell-details\">\n						"
+    + "\n				<div class=\"stat-cell-details\">\n					"
     + alias3((helpers.browserFeatureSupport || (depth0 && depth0.browserFeatureSupport) || alias2).call(alias1,depth0,(depths[1] != null ? depths[1].value : depths[1]),{"name":"browserFeatureSupport","hash":{},"data":data}))
-    + "\n					</div>\n				</div>\n			</td>\n";
+    + "\n				</div>\n			</td>\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.escapeExpression;
 
@@ -59,13 +59,27 @@ templates['results-view.html'] = template({"1":function(container,depth0,helpers
     + alias4(((helper = (helper = helpers.match || (depth0 != null ? depth0.match : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"match","hash":{},"data":data}) : helper)))
     + "</code></td>\n		</tr>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
-    var stack1, alias1=depth0 != null ? depth0 : {};
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : {};
 
-  return "<h2>Browser support</h2>\n<table class=\"features-table\">\n	<thead>\n		<tr>\n			<th>Feature</th>\n"
-    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.browsers : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+  return "<h2>Input</h2>\n<button class=\"btn open-settings\">Edit Settings</button>\n<table class=\"input-table\">\n	<tbody>\n		<tr>\n			<th>Path searched</th>\n			<td><span class=\"icon icon-file-directory\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.directoryPath : stack1), depth0))
+    + "</span></td>\n		</tr>\n		<tr>\n			<th>Excluding VCS ignored files</th>\n			<td><code>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.excludeVcsIgnoredFiles : stack1), depth0))
+    + "</code></td>\n		</tr>\n		<tr>\n			<th>Excluding ignored names from core config</th>\n			<td><code>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.excludeIgnoredNames : stack1), depth0))
+    + "</code></td>\n		</tr>\n		<tr>\n			<th>Custom ignored names</th>\n			<td><code>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.customIgnoredNames : stack1), depth0))
+    + "</code></td>\n		</tr>\n		<tr>\n			<th>File Filters (CSS)</th>\n			<td><code>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.fileFiltersCSS : stack1), depth0))
+    + "</code></td>\n		</tr>\n		<tr>\n			<th>File Filters (JavaScript)</th>\n			<td><code>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.fileFiltersJavaScript : stack1), depth0))
+    + "</code></td>\n		</tr>\n		<tr>\n			<th>File Filters (HTML)</th>\n			<td><code>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.input : depth0)) != null ? stack1.fileFiltersHTML : stack1), depth0))
+    + "</code></td>\n		</tr>\n	</tbody>\n</table>\n\n<h2>Browser support</h2>\n<table class=\"features-table\">\n	<thead>\n		<tr>\n			<th>Feature</th>\n"
+    + ((stack1 = helpers.each.call(alias3,(depth0 != null ? depth0.browsers : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "		</tr>\n	</thead>\n	<tbody>\n"
-    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers.each.call(alias3,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	</tbody>\n</table>\n\n<h2>References to features in code</h2>\n<table class=\"references-table\">\n	<thead>\n		<tr>\n			<th id=\"reference-file\">Filename</th>\n			<th id=\"reference-type\">Type of match</th>\n			<th id=\"reference-match\">Match</th>\n		</tr>\n	</thead>\n	<tbody>\n"
-    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(6, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + ((stack1 = helpers.each.call(alias3,(depth0 != null ? depth0.results : depth0),{"name":"each","hash":{},"fn":container.program(6, data, 0, blockParams, depths),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	<tbody>\n</table>\n";
 },"useData":true,"useDepths":true});
